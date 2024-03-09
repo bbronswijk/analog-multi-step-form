@@ -24,16 +24,32 @@ import { FooterComponent } from '../ui/footer.component';
                      label="Name"
                      placeholder="e.g. Stephen King"
                      [invalid]="formService.isInvalid('personalInfo.name') && form.submitted">
+            <span *ngIf="formService.form.get('personalInfo.name')?.hasError('required') && form.submitted"
+                  class="text-strawberry-red ml-auto">
+              This field is required
+            </span>
           </app-input>
           <app-input formControlName="email"
                      label="Email Address"
                      placeholder="e.g. stephenking@lorem.com"
                      [invalid]="formService.isInvalid('personalInfo.email') && form.submitted">
+            <span *ngIf="formService.form.get('personalInfo.email')?.hasError('required') && form.submitted"
+                  class="text-strawberry-red ml-auto">
+              This field is required
+            </span>
+            <span *ngIf="formService.form.get('personalInfo.email')?.hasError('invalidEmail') && form.submitted"
+                  class="text-strawberry-red ml-auto">
+              Provided email is not valid
+            </span>
           </app-input>
           <app-input formControlName="phone"
                      label="Phone Number"
                      placeholder="e.g. +1 234 567 890"
                      [invalid]="formService.isInvalid('personalInfo.phone') && form.submitted">
+            <span *ngIf="formService.form.get('personalInfo.phone')?.hasError('required') && form.submitted"
+                  class="text-strawberry-red ml-auto">
+              This field is required
+            </span>
           </app-input>
         </div>
       </app-mobile-card>

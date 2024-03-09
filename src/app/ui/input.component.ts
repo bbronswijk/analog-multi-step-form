@@ -18,7 +18,7 @@ import { AsyncPipe, NgClass, NgIf } from '@angular/common';
   template: `
     <label [for]="formControlName()" class="flex text-sm py-1.5 text-marine-blue">
       {{ label() }}
-      <span *ngIf="invalid()" class="text-strawberry-red ml-auto">This field is required</span>
+      <ng-content/>
     </label>
     <input [id]="formControlName()"
            [(ngModel)]="value"

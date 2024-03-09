@@ -3,6 +3,7 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 import { debounceTime } from 'rxjs';
 import { Plan } from '../pages/select-plan.page';
 import { AddOn } from '../pages/add-ons.page';
+import { emailValidator } from '../util/email.validator';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class FormService {
   public form = new FormGroup({
     personalInfo: new FormGroup({
       name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, emailValidator()]),
       phone: new FormControl('', Validators.required),
     }),
     plan: new FormControl<Plan|undefined>(undefined, { nonNullable: true, validators: Validators.required }),
