@@ -9,6 +9,9 @@
   "files": ["src/main.ts", "src/main.server.ts"],
   "include": [
     "src/**/*.d.ts",
+    "src/app/ui/**/*.ts",
+    "src/app/services/**/*.ts",
+    "src/app/util/**/*.ts",
     "src/app/routes/**/*.ts",
     "src/app/pages/**/*.page.ts"
   ]
