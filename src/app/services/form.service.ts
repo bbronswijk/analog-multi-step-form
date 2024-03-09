@@ -11,9 +11,9 @@ export class FormService {
   /** Application state */
   public form = new FormGroup({
     personalInfo: new FormGroup({
-      name: new FormControl('sds', Validators.required),
-      email: new FormControl('sf', Validators.required),
-      phone: new FormControl('sf', Validators.required),
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
     }),
     plan: new FormControl<Plan|undefined>(undefined, { nonNullable: true, validators: Validators.required }),
     yearlyBilling: new FormControl(false, { nonNullable: true }),
@@ -57,7 +57,7 @@ export class FormService {
       return false;
     }
 
-    return input.invalid && (input.touched ?? input.dirty);
+    return input.invalid;
   }
 
   /** Helper method to determine whether add-on is selected. */
