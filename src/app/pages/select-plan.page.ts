@@ -49,10 +49,10 @@ export const routeMeta: RouteMeta = {
                 <h2 class="mt-auto font-bold">{{ plan.name }}</h2>
 
                 @if (formService.yearlyBillingSelected) {
-                  <span class="text-cool-gray">{{ plan.pricePerYear | currency:'USD' }}/yr</span>
-                  <span class="text-xs">2 months free</span>
+                  <div class="text-cool-gray">{{ plan.pricePerYear | currency:'USD' }}/yr</div>
+                  <div class="text-xs">2 months free</div>
                 } @else {
-                  <span class="text-cool-gray">{{ plan.pricePerMonth | currency:'USD' }}/mo</span>
+                  <div class="text-cool-gray">{{ plan.pricePerMonth | currency:'USD' }}/mo</div>
                 }
               </div>
             </app-card>
